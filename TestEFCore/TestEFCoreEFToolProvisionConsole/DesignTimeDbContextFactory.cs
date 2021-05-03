@@ -7,6 +7,10 @@ using TestEFCoreDataAccess.DataAccess;
 
 namespace TestEFCoreEFToolProvisionConsole
 {
+    /// <summary>
+    /// This class is the most important class if you want to support EF Core tools
+    /// in a console app during design time.
+    /// </summary>
     public class DesignTimeDbContextFactory : IDesignTimeDbContextFactory<PeopleContext>
     {
         public PeopleContext CreateDbContext(string[] args)

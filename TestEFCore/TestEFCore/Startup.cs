@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using TestEFCoreDataAccess.DataAccess;
 
 namespace TestEFCore
 {
@@ -25,10 +24,6 @@ namespace TestEFCore
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<PeopleContext>(options =>
-            {
-                options.UseMySQL(Configuration.GetConnectionString("Default"));
-            });
             services.AddRazorPages();
         }
 

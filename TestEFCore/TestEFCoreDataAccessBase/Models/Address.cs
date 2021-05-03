@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace TestEFCoreDataAccess.Models
+namespace TestEFCoreDataAccessBase.Models
 {
     public class Address
     {

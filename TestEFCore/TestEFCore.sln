@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.809.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEFCore", "TestEFCore\TestEFCore.csproj", "{B1F425C2-2527-4AAB-988F-75F811621435}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEFCoreDataAccess", "TestEFCoreDataAccess\TestEFCoreDataAccess.csproj", "{A0F5C30E-9DB9-4030-B4B0-05C12C336D66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEFCoreDataAccess.MySQL", "TestEFCoreDataAccess.MySQL\TestEFCoreDataAccess.MySQL.csproj", "{A0F5C30E-9DB9-4030-B4B0-05C12C336D66}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEFCoreEFToolProvisionConsole", "TestEFCoreEFToolProvisionConsole\TestEFCoreEFToolProvisionConsole.csproj", "{15D9740D-0A9A-4B5C-8997-B5A9B733C49B}"
 EndProject
@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 		dotnetefbash.txt = dotnetefbash.txt
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEFCoreDataAccessBase", "TestEFCoreDataAccessBase\TestEFCoreDataAccessBase.csproj", "{8D3EAC08-32BC-41E7-B269-C7A570D86C21}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{15D9740D-0A9A-4B5C-8997-B5A9B733C49B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{15D9740D-0A9A-4B5C-8997-B5A9B733C49B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{15D9740D-0A9A-4B5C-8997-B5A9B733C49B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D3EAC08-32BC-41E7-B269-C7A570D86C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D3EAC08-32BC-41E7-B269-C7A570D86C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D3EAC08-32BC-41E7-B269-C7A570D86C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D3EAC08-32BC-41E7-B269-C7A570D86C21}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

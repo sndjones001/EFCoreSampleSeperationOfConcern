@@ -5,10 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
     <Folder Include="DataAccess\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="MySql.Data.EntityFrameworkCore" Version="8.0.22" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TestEFCoreDataAccessBase\TestEFCoreDataAccessBase.csproj" />
   </ItemGroup>
 </Project>

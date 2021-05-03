@@ -2,22 +2,24 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TestEFCoreDataAccess.DataAccess;
 
 namespace TestEFCoreDataAccess.Migrations
 {
     [DbContext(typeof(PeopleContext))]
-    partial class PeopleContextModelSnapshot : ModelSnapshot
+    [Migration("20210503115739_UpdateEmailLengthTableColumns")]
+    partial class UpdateEmailLengthTableColumns
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.14")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
-            modelBuilder.Entity("TestEFCoreDataAccess.Models.Address", b =>
+            modelBuilder.Entity("TestEFCoreDataAccessBase.Models.Address", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -53,14 +55,16 @@ namespace TestEFCoreDataAccess.Migrations
                     b.ToTable("Addresses");
                 });
 
-            modelBuilder.Entity("TestEFCoreDataAccess.Models.Email", b =>
+            modelBuilder.Entity("TestEFCoreDataAccessBase.Models.Email", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
                     b.Property<string>("EmailAddress")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasColumnType("varchar(300)")
+                        .HasMaxLength(300);
 
                     b.Property<int?>("PersonId")
                         .HasColumnType("int");
@@ -72,7 +76,7 @@ namespace TestEFCoreDataAccess.Migrations
                     b.ToTable("EmailAddresses");
                 });
 
-            modelBuilder.Entity("TestEFCoreDataAccess.Models.Person", b =>
+            modelBuilder.Entity("TestEFCoreDataAccessBase.Models.Person", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -82,26 +86,30 @@ namespace TestEFCoreDataAccess.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("FirstName")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50);
 
                     b.Property<string>("LastName")
-                        .HasColumnType("text");
+                        .IsRequired()
+                        .HasColumnType("varchar(50)")
+                        .HasMaxLength(50);
 
                     b.HasKey("Id");
 
                     b.ToTable("People");
                 });
 
-            modelBuilder.Entity("TestEFCoreDataAccess.Models.Address", b =>
+            modelBuilder.Entity("TestEFCoreDataAccessBase.Models.Address", b =>
                 {
-                    b.HasOne("TestEFCoreDataAccess.Models.Person", null)
+                    b.HasOne("TestEFCoreDataAccessBase.Models.Person", null)
                         .WithMany("Addresses")
                         .HasForeignKey("PersonId");
                 });
 
-            modelBuilder.Entity("TestEFCoreDataAccess.Models.Email", b =>
+            modelBuilder.Entity("TestEFCoreDataAccessBase.Models.Email", b =>
                 {
-                    b.HasOne("TestEFCoreDataAccess.Models.Person", null)
+                    b.HasOne("TestEFCoreDataAccessBase.Models.Person", null)
                         .WithMany("EmailAddresses")
                         .HasForeignKey("PersonId");
                 });
